@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <GetUI xmlns="http://tempuri.org/">
+      <ErrInfo/>
+      <UI>$UI</UI>
+      <FC>0</FC>
+      <IsTitleWhiteLight>false</IsTitleWhiteLight>
+    </GetUI>
+  </soap:Body>
+</soap:Envelope>

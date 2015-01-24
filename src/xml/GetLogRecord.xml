@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<soap:Body>
+		<GetLogRecord xmlns="http://tempuri.org/">
+			<ErrInfo />
+			<UID>$UID</UID>
+			<PW>$PW</PW>
+			<D>$D</D>
+		</GetLogRecord>
+	</soap:Body>
+</soap:Envelope>

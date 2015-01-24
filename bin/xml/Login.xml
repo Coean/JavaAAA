@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <Login xmlns="http://tempuri.org/">
+      <ErrInfo>$ErrInfo</ErrInfo>
+      <UserLoginRequestInfo>
+        <UserID>$UserID</UserID>
+        <UserPW>$UserPW</UserPW>
+        <UserIP>$UserIP</UserIP>
+        <ComputerName>$ComputerName</ComputerName>
+        <MAC>$MAC</MAC>
+        <IsAutoLogin>$IsAutoLogin</IsAutoLogin>
+        <ClientVersion>$ClientVersion</ClientVersion>
+        <OSVersion>$OSVersion</OSVersion>
+      </UserLoginRequestInfo>
+    </Login>
+  </soap:Body>
+</soap:Envelope>
