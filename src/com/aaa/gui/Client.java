@@ -279,7 +279,6 @@ public class Client extends JFrame
 			{
 				InetAddress inetAddress = InetAddress.getLocalHost();
 				this.UserIP = getIPAddress(inetAddress);
-				this.UserIP = ip;
 				if (SystemInfo.isWindows()) {
 					this.MAC = getMACAddress(inetAddress).toUpperCase();
 				}else {
