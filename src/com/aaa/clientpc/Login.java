@@ -42,6 +42,8 @@ public class Login
     byte[] desIV = desKey;
     CryptoTools cryptoTools = new CryptoTools(desKey, desIV);
     UserPW = cryptoTools.encode(UserPW);
+
+    // exceptional handling
     try
     {
       InputStream xmlStream = Client.class.getClassLoader()
@@ -58,11 +60,11 @@ public class Login
         .replaceAll("\\$ClientVersion", this.loginRequestInfo.getClientVersion())
         .replaceAll("\\$OSVersion", this.loginRequestInfo.getOSVersion());
       byte[] data = xmlString.getBytes();
-      
+
 //      System.setProperty("proxySet", "true");
 //      System.setProperty("http.proxyHost", "127.0.0.1");
 //      System.setProperty("http.proxyPort", "8888");
-      
+
       String path = "http://100.0.0.10/NSUAAAWS/Default.asmx";
       HttpURLConnection conn = (HttpURLConnection)new URL(path)
         .openConnection();
@@ -70,9 +72,9 @@ public class Login
       conn.setRequestMethod("POST");
       conn.setDoOutput(true);
       conn.setRequestProperty("Content-Type", "text/xml; charset=utf-8");
-      conn.setRequestProperty("Content-Length", 
+      conn.setRequestProperty("Content-Length",
         String.valueOf(data.length));
-      conn.setRequestProperty("SOAPAction", 
+      conn.setRequestProperty("SOAPAction",
         "\"http://tempuri.org/Login\"");
       conn.getOutputStream().write(data);
       if (conn.getResponseCode() == 200) {
@@ -80,7 +82,7 @@ public class Login
         return parseLogin(xmlResult);
       }
 
-      JOptionPane.showMessageDialog(null, "Á¬½Ó·þÎñÆ÷³¬Ê±£¬µÇÂ¼Ê§°Ü", "µÇÂ¼Ê§°Ü", 
+      JOptionPane.showMessageDialog(null, "Á¬½Ó·þÎñÆ÷³¬Ê±£¬µÇÂ¼Ê§°Ü", "µÇÂ¼Ê§°Ü",
         0);
     }
     catch (UnsupportedEncodingException e)
